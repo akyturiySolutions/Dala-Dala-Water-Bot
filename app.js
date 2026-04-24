@@ -9,15 +9,15 @@ const express = require("express");
 // 🔥 FIREBASE ADMIN INIT
 // ─────────────────────────────────────────────
 const admin   = require("firebase-admin");
-const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
+if (!admin.app.length){
+const serviceAccount = 
+JSON.parse(process.env.FIREBASE_CONFIG);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+}
 
 const db = admin.firestore();
 
