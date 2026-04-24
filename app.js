@@ -3,13 +3,12 @@ process.env.FIREBASE_CONFIG);
 require("dotenv").config();
 const fetch   = require("node-fetch");
 const express = require("express");
-const admin   = require("firebase-admin");
+
 
 // ─────────────────────────────────────────────
 // 🔥 FIREBASE ADMIN INIT
 // ─────────────────────────────────────────────
-const admin = require("firebase-admin");
-
+const admin   = require("firebase-admin");
 const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
 
 admin.initializeApp({
