@@ -1,3 +1,5 @@
+console.log("FIREBASE_CONFIG:", 
+process.env.FIREBASE_CONFIG);
 require("dotenv").config();
 const fetch   = require("node-fetch");
 const express = require("express");
