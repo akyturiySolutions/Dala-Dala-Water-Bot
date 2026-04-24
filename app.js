@@ -8,7 +8,7 @@ const express = require("express");
 // ─────────────────────────────────────────────
 // 🔥 FIREBASE ADMIN INIT
 // ─────────────────────────────────────────────
-const admin   = require("firebase-admin");
+const admin   = require("./firebase");
 if (!admin.app.length){
 const serviceAccount = 
 JSON.parse(process.env.FIREBASE_CONFIG);
