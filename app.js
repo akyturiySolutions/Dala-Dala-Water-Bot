@@ -1,6 +1,6 @@
+require("dotenv").config();
 console.log("FIREBASE_CONFIG:", 
 process.env.FIREBASE_CONFIG);
-require("dotenv").config();
 const fetch   = require("node-fetch");
 const express = require("express");
 
@@ -9,7 +9,7 @@ const express = require("express");
 // 🔥 FIREBASE ADMIN INIT
 // ─────────────────────────────────────────────
 const admin   = require("./firebase");
-if (!admin.app.length){
+if (!admin.apps.length){
 const serviceAccount = 
 JSON.parse(process.env.FIREBASE_CONFIG);
 
@@ -98,7 +98,7 @@ async function saveOrder(user, phone) {
 // 🔹 WEBHOOK VERIFICATION
 // ─────────────────────────────────────────────
 app.get("/webhook", (req, res) => {
-  const VERIFY_TOKEN = process.env.WEBHOOK_VERIFY_TOKEN;
+  const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
   const mode      = req.query["hub.mode"];
   const token     = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
